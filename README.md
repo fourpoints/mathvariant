@@ -1,6 +1,9 @@
 # mathvariant
 MathML mathvariant Unicode table
 
+## Preview
+[Github.io HTML preview](https://htmlpreview.github.io/?https://github.com/fourpoints/mathvariant/blob/master/index.html)
+
 
 ## Code example
 Note: JSON does not support integer keys, so we can't store the result of maketrans as a JSON file.
