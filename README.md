@@ -1,4 +1,4 @@
-# mathvariant
+# Mathvariant
 MathML mathvariant Unicode table
 
 ## Preview
@@ -9,13 +9,19 @@ MathML mathvariant Unicode table
 Note: JSON does not support integer keys, so we can't store the result of maketrans as a JSON file.
 
 ```py
+import json
+from pathlib import Path
+
+def load(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
 def maketrans(fonts):
     return {
         font_name: str.maketrans(alphabet)
         for font_name, alphabet in fonts.items()
     }
 
-mathvariant = maketrans(json.loads(Path("mathvariant.json").read_text(encoding="utf-8"))
+mathvariant = maketrans(load(Path("mathvariant.json")))
 
 # Example use
 print("ABC".translate(mathvariant["italic"]))
