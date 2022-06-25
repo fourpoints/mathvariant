@@ -24,6 +24,6 @@ def maketrans(fonts):
 mathvariant = maketrans(load(Path("mathvariant.json")))
 
 # Example use
-print("ABC".translate(mathvariant["italic"]))
-print(mathvariant["italic"][ord("A")])
+print("ABC".translate(mathvariant["fraktur"]))  # 𝔄𝔅ℭ
+print(mathvariant["fraktur"][ord("A")])  # 𝔄
 ``` 
